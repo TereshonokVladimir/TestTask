@@ -19,7 +19,7 @@ import {
 import axios from "axios";
 import { CoinList } from "../config/api";
 import { useNavigate } from "react-router-dom";
-import { CryptoState } from "../CryptoContext";
+import { CoinState } from "../CoinContext";
 
 export function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -31,7 +31,7 @@ export default function CoinsTable() {
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
 
-  const { currency, symbol } = CryptoState();
+  const { currency, symbol } = CoinState();
 
   const useStyles = makeStyles({
     row: {
@@ -90,10 +90,10 @@ export default function CoinsTable() {
           variant="h4"
           style={{ margin: 18, fontFamily: "Montserrat" }}
         >
-          Cryptocurrency Prices by Market Cap
+          Coincurrency Prices by Market Cap
         </Typography>
         <TextField
-          label="Search For a Crypto Currency.."
+          label="Search For a Coin Currency.."
           variant="outlined"
           style={{ marginBottom: 20, width: "100%" }}
           onChange={(e) => setSearch(e.target.value)}

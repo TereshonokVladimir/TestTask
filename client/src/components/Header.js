@@ -12,7 +12,7 @@ import {
   ThemeProvider,
 } from "@material-ui/core/styles";
 import { useNavigate } from "react-router-dom";
-import { CryptoState } from "../CryptoContext";
+import { CoinState } from "../CoinContext";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -35,7 +35,7 @@ const darkTheme = createTheme({
 
 function Header() {
   const classes = useStyles();
-  const { currency, setCurrency } = CryptoState();
+  const { currency, setCurrency } = CoinState();
 
   const history = useNavigate();
 
@@ -49,7 +49,7 @@ function Header() {
               variant="h6"
               className={classes.title}
             >
-              Crypto Hunter
+              Coin Hunter
             </Typography>
             {/* <Button color="inherit">Login</Button> */}
             <Select

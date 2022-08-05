@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 import AliceCarousel from "react-alice-carousel";
 import { Link } from "react-router-dom";
 import { TrendingCoins } from "../../config/api";
-import { CryptoState } from "../../CryptoContext";
+import { CoinState } from "../../CoinContext";
 import { numberWithCommas } from "../CoinsTable";
 
 const Carousel = () => {
   const [trending, setTrending] = useState([]);
-  const { currency, symbol } = CryptoState();
+  const { currency, symbol } = CoinState();
 
   const fetchTrendingCoins = async () => {
     const { data } = await axios.get(TrendingCoins(currency));

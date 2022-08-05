@@ -6,13 +6,13 @@ import ReactHtmlParser from "react-html-parser";
 import CoinInfo from "../components/CoinInfo";
 import { SingleCoin } from "../config/api";
 import { numberWithCommas } from "../components/CoinsTable";
-import { CryptoState } from "../CryptoContext";
+import { CoinState } from "../CoinContext";
 
 const CoinPage = () => {
   const { id } = useParams();
   const [coin, setCoin] = useState();
 
-  const { currency, symbol } = CryptoState();
+  const { currency, symbol } = CoinState();
 
   const fetchCoin = async () => {
     const { data } = await axios.get(SingleCoin(id));

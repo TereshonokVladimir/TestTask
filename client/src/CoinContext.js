@@ -1,8 +1,8 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
-const Crypto = createContext();
+const Coin = createContext();
 
-const CryptoContext = ({ children }) => {
+const CoinContext = ({ children }) => {
   const [currency, setCurrency] = useState("UAH");
   const [symbol, setSymbol] = useState("₴");
 
@@ -12,14 +12,14 @@ const CryptoContext = ({ children }) => {
   }, [currency]);
 
   return (
-    <Crypto.Provider value={{ currency, setCurrency, symbol }}>
+    <Coin.Provider value={{ currency, setCurrency, symbol }}>
       {children}
-    </Crypto.Provider>
+    </Coin.Provider>
   );
 };
 
-export default CryptoContext;
+export default CoinContext;
 
-export const CryptoState = () => {
-  return useContext(Crypto);
+export const CoinState = () => {
+  return useContext(Coin);
 };
